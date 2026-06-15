@@ -77,7 +77,7 @@ RUN --mount=type=cache,dst=/var/cache \
 # ---------------------------------------------------------------------------
 RUN --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
-    dnf5 -y install --skip-unavailable --allowerasing \
+    dnf5 -y install --skip-unavailable \
     # Core Hyprland & Session Management
     hyprland hyprland-qtutils hyprland-guiutils uwsm hyprland-uwsm hyprlock hypridle hyprpicker \
     # Launchers, Bar & Notifications
