@@ -2,7 +2,7 @@
 set -euo pipefail
 
 CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
-RUNNER="wofi"
+RUNNER="rofi"
 ROFI_THEME="$CONFIG_DIR/rofi/config-tritonctl.rasi"
 
 case "${1:-}" in

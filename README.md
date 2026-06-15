@@ -17,7 +17,7 @@ HyprBazzite is a custom [bootc](https://github.com/bootc-dev/bootc) image based 
 To switch your existing `bootc` compatible system (like Bazzite or Fedora Atomic) to HyprBazzite, run:
 
 ```bash
-sudo bootc switch ghcr.io/tvorfreude/hyprbazzite:latest
+sudo bootc switch ghcr.io/playernobody/hyprbazzite:latest
 ```
 
 ### Tags

@@ -2,13 +2,13 @@
 local mainMod = "SUPER"
 local terminal = "kitty"
 local browser = "flatpak run io.github.zen_browser.zen"
-local filemanager = "thunar"
+local filemanager = "nemo"
 
 -- APPLICATION LAUNCHING
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + B",      hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + F",      hl.dsp.exec_cmd(filemanager))
-hl.bind(mainMod .. " + SPACE",  hl.dsp.exec_cmd("wofi -wass"))
+hl.bind(mainMod .. " + SPACE",  hl.dsp.exec_cmd("rofi -show drun"))
 hl.bind(mainMod .. " + E",      hl.dsp.exec_cmd(terminal .. " -e nvim"))
 
 -- WINDOW MANAGEMENT
@@ -71,7 +71,7 @@ hl.bind(mainMod .. " + ALT + L",   hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + K",         hl.dsp.exec_cmd("/usr/libexec/hyprbazzite-ctl osk toggle"))
 hl.bind(mainMod .. " + SHIFT + K", hl.dsp.exec_cmd("/etc/hypr/scripts/swap-osk-half.sh"))
 hl.bind(mainMod .. " + O",         hl.dsp.exec_cmd("/usr/libexec/hyprbazzite-ctl transparency toggle"))
-hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("cliphist list | wofi --dmenu | cliphist decode | wl-copy"))
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("cliphist list | rofi --dmenu | cliphist decode | wl-copy"))
 
 -- MULTIMEDIA (Repeating and Locked)
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })

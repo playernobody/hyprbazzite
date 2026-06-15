@@ -3,10 +3,10 @@ was previously ublue-hyprbazzite and not-signed... NOW **hyprbazzite** and signe
 
 Please run the following in this order
 ```
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/tvorfreude/hyprbazzite:latest
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/playernobody/hyprbazzite:latest
 systemctl reboot
 # After reboot
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/tvorfreude/hyprbazzite:latest
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/playernobody/hyprbazzite:latest
 systemctl reboot
 # Migration Complete
 ```

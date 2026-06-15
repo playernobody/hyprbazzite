@@ -7,7 +7,7 @@ set -e
 echo "🧪 Starting HyprBazzite Image Verification..."
 
 # 1. Critical Package Checks
-declare -a REQUIRED_PKGS=("hyprland" "waybar" "wofi" "zsh" "starship")
+declare -a REQUIRED_PKGS=("hyprland" "waybar" "rofi" "zsh" "starship")
 for pkg in "${REQUIRED_PKGS[@]}"; do
     if ! rpm -q "$pkg" > /dev/null 2>&1; then
         echo "❌ ERROR: Required package '$pkg' is missing from the image."
@@ -21,7 +21,6 @@ echo "✅ All critical packages are present."
 declare -a REQUIRED_FILES=(
     "/usr/lib/hyprbazzite/hypr/hyprland.lua"
     "/usr/lib/hyprbazzite/waybar/config.jsonc"
-    "/usr/lib/hyprbazzite/wofi/config"
 )
 for file in "${REQUIRED_FILES[@]}"
 do

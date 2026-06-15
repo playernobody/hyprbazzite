@@ -219,10 +219,10 @@
       "title<virtualbox>":                         "󰘚",
       "class<remmina>":                            "󰌘",
       // ── System / Misc ──
-      "class<obs|com.obsproject.Studio>":              "󰕨",
-      "class<steam|com.valvesoftware.Steam>":           "󰣑",
-      "class<thunar|nemo|org.gnome.Nautilus>":          "󰝰",
-      "class<gimp>":                                    "󰏥",
+      "class<obs|com.obsproject.Studio>":                 "󰕨",
+      "class<steam|com.valvesoftware.Steam>":             "󰣑",
+      "class<nemo|org.gnome.Nautilus>":                   "󰝰",
+      "class<gimp>":                                      "󰏥",
       "class<[Pp]avucontrol|org.pulseaudio.pavucontrol>": "󰝟",
       "class<nwg-look>":                               "󰒓",
       "class<polkit-gnome-authentication-agent-1>":    "󰒃",
@@ -458,7 +458,7 @@
       "Discord":                   "󰙯 Discord",
       "Slack":                     " Slack",
       "Telegram":                  "󰔥 Telegram",
-      "Thunar":                    "󰉋 Thunar",
+      "Nemo":                      "󰉋 Nemo",
       "Steam":                     " Steam",
       "Lutris":                    "󰮣 Lutris",
       "Bitwarden":                 "󰒄 Bitwarden",
@@ -479,7 +479,7 @@
       "firefox","org.mozilla.firefox",
       "google-chrome","com.google.Chrome",
       "io.github.zen_browser.zen","com.brave.Browser",
-      "thunar","org.gnome.Nautilus",
+      "nemo","org.gnome.Nautilus",
       "steam","com.valvesoftware.Steam",
       "lutris","net.lutris.Lutris",
       "com.bitwarden.desktop","neovide",
@@ -487,7 +487,7 @@
       "pavucontrol","org.pulseaudio.pavucontrol",
       "blueman-manager","org.gnome.Disks","org.gnome.Software"
     ],
-    "ignore-list": ["wofi","swaync","hyprlock"],
+    "ignore-list": ["rofi","swaync","hyprlock"],
     "on-click":        "activate",
     "on-click-middle": "close",
     "tooltip-format":  "{window}"
@@ -543,7 +543,7 @@
 
   "custom/menu": {
     "format": "󰍜",
-    "on-click": "wofi --show drun --conf /etc/wofi/config --style /etc/wofi/style.css",
+    "on-click": "rofi --show drun",
     "tooltip": true,
     "tooltip-format": "App Launcher"
   },
@@ -561,7 +561,7 @@
   },
   "custom/file_manager": {
     "format": "󰉋",
-    "on-click": "thunar",
+    "on-click": "nemo",
     "tooltip": true,
     "tooltip-format": "File Manager"
   },

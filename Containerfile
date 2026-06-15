@@ -38,7 +38,7 @@ COPY build_files /
 # ===========================================================================
 # Stage 3: Final Image
 # ===========================================================================
-FROM ghcr.io/ublue-os/bazzite:stable
+FROM ghcr.io/ublue-os/bazzite-nvidia-open:stable
 
 # Build arguments for versioning
 ARG SHA_HEAD_SHORT=unknown
@@ -68,8 +68,8 @@ RUN --mount=type=cache,dst=/var/cache \
 # ---------------------------------------------------------------------------
 RUN --mount=type=cache,dst=/var/cache \
     dnf5 -y remove --setopt=protected_packages= \
-    akonadi-server sddm baloo kate dolphin konsole khelpcenter \
-    "plasma-*" "kde*" "gnome-*" "kf5-*" "kf6-*" && \
+    akonadi-server kate dolphin konsole khelper \
+    "kwin*" "kdepim*" "konqueror*" "ark*" "kwrite*" "fedora-chromium-config-kde*" "kcm-plasmalogin*" "kscreen*" "kscreenlocker*" "powerdevil*" "steamdeck-kde-presets-desktop*" "kwalletmanager5*" "kamera*" "kedit*" "kinfocenter*" "kwrite*" "krdc*" "krdp*" "krfb*" "kio-gdrive*" "kio-extras*" "kio-admin*" "kdeplasma-addons*" "kdesu*" "libkgapi*" "mariadb*" "kdsoap*" "colord-kde*" "signon-kwallet*" "libkcddb*" "libkexiv2*" "libkgapi*" "kcm*" "layer-shell-qt*" "kdeconnect*" "kdeconnect*" "pam-kwallet*" "plasma-*" "kde-*" "kf5-*" "kf6-*" && \
     dnf5 -y clean all
 
 # ---------------------------------------------------------------------------
@@ -77,32 +77,30 @@ RUN --mount=type=cache,dst=/var/cache \
 # ---------------------------------------------------------------------------
 RUN --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
-    dnf5 -y install --skip-unavailable \
-    # Hyprland core
-    hyprland hyprland-guiutils hyprlock swayidle hyprpaper uwsm hyprland-uwsm \
-    # Desktop utilities
-    swww waybar SwayNotificationCenter wofi wvkbd hhd adjustor hhd-ui lact \
-    # Shell and CLI tools
-    zsh starship lsd git chezmoi kitty tmux fastfetch jq ripgrep \
-    # File management
-    thunar tumbler gvfs gvfs-mtp gvfs-gphoto2 \
-    # System utilities
-    network-manager-applet pavucontrol xdg-desktop-portal-hyprland lxqt-policykit \
-    # Security and encryption
-    gnome-keyring seahorse libsecret libsecret-devel gcr gcr-devel \
-    # Theming
-    blueman breeze-icon-theme qt5ct \
-    # Gaming
-    rom-properties lutris steam-devices \
-    # Fonts
-    jetbrains-mono jetbrains-mono-fonts \
-    # Media and clipboard
-    wl-clipboard grim slurp playerctl imv swappy mpv cliphist \
-    # Hardware and system tools
-    brightnessctl swappy gparted systemd-devel btop \
-    openrgb openrgb-udev-rules sddm && \
-    dnf5 -y autoremove && \
-    dnf5 -y clean all
+    dnf5 -y install --skip-unavailable --allowerasing \
+    # Core Hyprland & Session Management
+    hyprland hyprland-qtutils hyprland-guiutils uwsm hyprland-uwsm hyprlock hypridle hyprpicker \
+    # Launchers, Bar & Notifications
+    waybar rofi swaync wlogout \
+    # Wallpaper 
+    awww matugen \
+    # File Management (Nemo + Thumbnails + GVFS for mounting)
+    nemo nemo-fileroller tumbler gvfs gvfs-mtp gvfs-gphoto2 \
+    # Theming & Icons
+    qt5ct qt6ct kvantum nwg-look jetbrains-mono jetbrains-mono-fonts breeze-icon-theme eww \
+    # System Utilities
+    blueman pavucontrol nm-applet lxqt-policykit brightnessctl \
+    # Security
+    gnome-keyring seahorse libsecret gcr \
+    # Shell & CLI Tools
+    zsh starship lsd git chezmoi kitty tmux fastfetch jq ripgrep neovim \
+    # Media & Clipboard
+    wl-clipboard cliphist playerctl imv mpv grim slurp swappy grimblast \
+    # Hardware & Gaming
+    lact openrgb openrgb-udev-rules gparted btop lutris rom-properties steam-devices \
+    # Tools 
+    hhd adjustor hhd-ui wvkbd xdg-desktop-portal-hyprland sddm wayland-protocols libdecor \
+    && dnf5 -y autoremove && dnf5 -y clean all   
 
 # ---------------------------------------------------------------------------
 # Step 5: Copy system files and assets into image
