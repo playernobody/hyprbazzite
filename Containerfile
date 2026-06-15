@@ -88,7 +88,7 @@ RUN --mount=type=cache,dst=/var/cache \
     # File Management (Nemo + Thumbnails + GVFS for mounting)
     nemo nemo-fileroller tumbler gvfs gvfs-mtp gvfs-gphoto2 \
     # Theming & Icons
-    qt5ct qt6ct kvantum nwg-look jetbrains-mono jetbrains-mono-fonts breeze-icon-theme eww-git \
+    qt5ct qt6ct kvantum nwg-look jetbrains-mono jetbrains-mono-fonts breeze-icon-theme \
     # System Utilities
     blueman pavucontrol network-manager-applet lxqt-policykit brightnessctl \
     # Security

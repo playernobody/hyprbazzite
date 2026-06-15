@@ -75,7 +75,7 @@ tdp_menu() {
     current=$(tdp_get_current | grep -o '[0-9]\+' | head -n1 || echo "unknown")
     local options="10W\n15W\n25W\n35W\n45W"
     local choice
-    choice=$(echo -e "$options" | rofi -dmenu --width 300 --height 400 --prompt "Set TDP (Current: ${current}W)")
+    choice=$(echo -e "$options" | rofi -dmenu -theme ~/.config/rofi/launchers/type-6/style-9.rasi -p "Set TDP (Current: ${current}W)" -i)
     if [ -n "$choice" ]; then
         local watts=$(echo "$choice" | grep -o '[0-9]\+')
         tdp_set "$watts"
@@ -101,7 +101,7 @@ osk_toggle() {
 power_menu() {
     local options="󰐥 Shutdown\n󰑐 Reboot\n󰒲 Suspend\n󰓅 Hybrid-Sleep\n󰌾 Lock\n󰗼 Logout"
     local choice
-    choice=$(echo -e "$options" | rofi -dmenu --width 300 --height 400 --prompt "System Power")
+    choice=$(echo -e "$options" | rofi -dmenu -theme ~/.config/rofi/launchers/type-6/style-9.rasi -p "⏻ Power Menu" -i)
     case "$choice" in
         *"Shutdown"*) power_action shutdown ;;
         *"Reboot"*) power_action reboot ;;
