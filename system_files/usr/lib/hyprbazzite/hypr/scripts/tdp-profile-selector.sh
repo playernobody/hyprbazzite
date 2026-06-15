@@ -16,8 +16,8 @@ if [ -z "$TDP_LIST" ]; then
 fi
 
 # Show selection menu (rofi/dmenu)
-SELECTED=$(echo "$TDP_LIST" | rofi --dmenu --width 300 --height 400 --prompt "Select TDP (W) [$BOUNDS]")
+SELECTED=$(echo "$TDP_LIST" | rofi -dmenu --width 300 --height 400 --prompt "Select TDP (W) [$BOUNDS]")
 
 if [ -n "$SELECTED" ]; then
-    $TDP_SCRIPT set "$SELECTED" | rofi --dmenu --width 400 --height 100 --prompt "TDP Set to $SELECTED W" || true
+    $TDP_SCRIPT set "$SELECTED" | rofi -dmenu --width 400 --height 100 --prompt "TDP Set to $SELECTED W" || true
 fi
