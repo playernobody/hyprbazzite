@@ -56,6 +56,7 @@ RUN build_id="${BUILD_STAMP:-stable.$(date -u +%Y%m%d)-${SHA_HEAD_SHORT:-unknown
 # Step 2: Enable COPR repositories
 # ---------------------------------------------------------------------------
 RUN --mount=type=cache,dst=/var/cache \
+    dnf5 -y copr enable lionheartp/Hyprland && \
     dnf5 -y copr enable sdegler/hyprland && \
     dnf5 -y copr enable erikreider/SwayNotificationCenter && \
     dnf5 -y copr enable fed500/wvkbd && \
@@ -81,15 +82,15 @@ RUN --mount=type=cache,dst=/var/cache \
     # Core Hyprland & Session Management
     hyprland hyprland-qtutils hyprland-guiutils uwsm hyprland-uwsm hyprlock hypridle hyprpicker \
     # Launchers, Bar & Notifications
-    waybar rofi swaync wlogout \
+    waybar rofi SwayNotificationCenter wlogout \
     # Wallpaper 
     awww matugen \
     # File Management (Nemo + Thumbnails + GVFS for mounting)
     nemo nemo-fileroller tumbler gvfs gvfs-mtp gvfs-gphoto2 \
     # Theming & Icons
-    qt5ct qt6ct kvantum nwg-look jetbrains-mono jetbrains-mono-fonts breeze-icon-theme eww \
+    qt5ct qt6ct kvantum nwg-look jetbrains-mono jetbrains-mono-fonts breeze-icon-theme eww-git \
     # System Utilities
-    blueman pavucontrol nm-applet lxqt-policykit brightnessctl \
+    blueman pavucontrol network-manager-applet lxqt-policykit brightnessctl \
     # Security
     gnome-keyring seahorse libsecret gcr \
     # Shell & CLI Tools
