@@ -2,7 +2,7 @@
 set -euo pipefail
 
 CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
-THEME="$CONFIG_DIR/rofi/config-powermenu.rasi"
+THEME="$CONFIG_DIR/rofi/launchers/type-6/style-9.rasi"
 OPTIONS="  Shutdown\n  Reboot\n  Suspend\n⏾  Hybrid Sleep\n  Lock\n  Logout"
 
 choice=$(echo -e "$OPTIONS" | rofi -dmenu -p "⏻ Power Menu" -i -config "$THEME")

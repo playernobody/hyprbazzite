@@ -3,7 +3,7 @@ set -euo pipefail
 
 CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
 RUNNER="rofi"
-ROFI_THEME="$CONFIG_DIR/rofi/config-tritonctl.rasi"
+ROFI_THEME="$CONFIG_DIR/rofi/launchers/type-6/style-9.rasi"
 
 case "${1:-}" in
     "push")

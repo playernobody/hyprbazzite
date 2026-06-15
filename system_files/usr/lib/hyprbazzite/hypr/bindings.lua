@@ -7,9 +7,18 @@ local filemanager = "nemo"
 -- APPLICATION LAUNCHING
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + B",      hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + F",      hl.dsp.exec_cmd(filemanager))
-hl.bind(mainMod .. " + SPACE",  hl.dsp.exec_cmd("rofi -show drun"))
-hl.bind(mainMod .. " + E",      hl.dsp.exec_cmd(terminal .. " -e nvim"))
+hl.bind(mainMod .. " + E",      hl.dsp.exec_cmd(filemanager))
+hl.bind(
+    mainMod .. " + SPACE",
+    hl.dsp.exec_cmd("if pgrep -x rofi >/dev/null; then pkill rofi; else rofi -show drun -theme ~/.config/rofi/launchers/type-6/style-9.rasi; fi")
+)
+hl.bind(mainMod .. " + F",      hl.dsp.exec_cmd(terminal .. " -e nvim"))
+hl.bind(
+    mainMod .. " + ESCAPE",
+    hl.dsp.exec_cmd("if pgrep -x rofi >/dev/null; then pkill rofi; else /usr/libexec/hyprbazzite-ctl power menu; fi")
+)
+hl.bind(mainMod .. " + CTRL + SPACE", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"))
+
 
 -- WINDOW MANAGEMENT
 hl.bind(mainMod .. " + W",       hl.dsp.window.close())

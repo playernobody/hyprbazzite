@@ -13,7 +13,7 @@ hl.config({
     -- Core Visuals
     general = {
         gaps_in = 5,
-        gaps_out = 10,
+        gaps_out = 5,
         border_size = 2,
         ["col.active_border"] = active_border,
         ["col.inactive_border"] = inactive_border,
@@ -41,6 +41,7 @@ hl.config({
     decoration = {
         rounding = 8,
         dim_special = 0.3,
+        inactive_opacity = 0.8,
         shadow = { enabled = true, range = 12, color = "rgba(000000dd)" },
         blur = { enabled = true, size = 5, passes = 2, ignore_opacity = true },
     },

@@ -4,7 +4,7 @@ set -euo pipefail
 # --- Configuration ---
 RUNNER="rofi"
 CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
-ROFI_THEME="$CONFIG_DIR/rofi/config-tritonctl.rasi"
+ROFI_THEME="$CONFIG_DIR/rofi/launchers/type-6/style-9.rasi"
 SCRIPTS_DIR="/usr/lib/hyprbazzite/hypr/scripts"
 
 # --- Help Function ---

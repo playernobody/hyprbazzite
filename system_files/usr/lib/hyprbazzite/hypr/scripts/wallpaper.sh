@@ -6,7 +6,7 @@ CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
 WALL_DIR="$HOME/Pictures/wallpapers"
 WALLUST_DIR="$CONFIG_DIR/hypr/wallust"
 WALLUST_CURRENT_WALL="$WALLUST_DIR/current_wallpaper.jpg"
-ROFI_THEME="$CONFIG_DIR/rofi/config-wallpaper.rasi"
+ROFI_THEME="$CONFIG_DIR/rofi/launchers/type-6/style-9.rasi"
 RUNNER="rofi"
 
 if ! command -v jq &>/dev/null || ! command -v bc &>/dev/null; then

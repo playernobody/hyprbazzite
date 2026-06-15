@@ -69,7 +69,7 @@ RUN --mount=type=cache,dst=/var/cache \
 # ---------------------------------------------------------------------------
 RUN --mount=type=cache,dst=/var/cache \
     dnf5 -y remove --setopt=protected_packages= \
-    akonadi-server kate dolphin konsole khelper \
+    akonadi-server kate dolphin konsole khelper okular\
     "kwin*" "kdepim*" "konqueror*" "ark*" "kwrite*" "fedora-chromium-config-kde*" "kcm-plasmalogin*" "kscreen*" "kscreenlocker*" "powerdevil*" "steamdeck-kde-presets-desktop*" "kwalletmanager5*" "kamera*" "kedit*" "kinfocenter*" "kwrite*" "krdc*" "krdp*" "krfb*" "kio-gdrive*" "kio-extras*" "kio-admin*" "kdeplasma-addons*" "kdesu*" "libkgapi*" "mariadb*" "kdsoap*" "colord-kde*" "signon-kwallet*" "libkcddb*" "libkexiv2*" "libkgapi*" "kcm*" "layer-shell-qt*" "kdeconnect*" "kdeconnect*" "pam-kwallet*" "plasma-*" "kde-*" "kf5-*" "kf6-*" && \
     dnf5 -y clean all
 
